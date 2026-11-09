@@ -1,6 +1,5 @@
 node_modules
 dist
 /supabase
-.lovable
 .git
 README.md
