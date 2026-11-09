@@ -1,0 +1,21 @@
+# Static Vibes
+
+> Premium fashion, custom posters, and curated lifestyle products delivered across Bangladesh with Cash on Delivery, bKash, and Nagad.
+
+Static Vibes is a Bangladesh-based e-commerce store offering premium clothing, custom-designed posters, and curated lifestyle items. We focus on quality fabrics, original designs, and fast nationwide delivery.
+
+## Pages
+
+- [Home](/): Featured collections, hero banners, and new arrivals.
+- [Shop](/shop): Full catalog with filters by category, color, size, and price.
+- [Customize](/customize): Design your own custom poster.
+- [About](/about): Our story, mission, and team.
+- [Contact](/contact): Phone, email, WhatsApp, and store location.
+- [Order Tracking](/order-tracking): Track an order by ID or phone number.
+- [Return Policy](/return-policy): Return and exchange rules.
+- [Terms & Conditions](/terms-conditions): Site terms of use.
+- [Privacy Policy](/privacy-policy): How we handle customer data.
+
+## Optional
+
+- [Wishlist](/wishlist): Saved products (requires sign-in).

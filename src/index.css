@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 10% 15%;
+
+    --card: 35 25% 98%;
+    --card-foreground: 0 10% 15%;
+
+    --popover: 30 15% 99%;
+    --popover-foreground: 0 10% 15%;
+
+    --primary: 0 0% 8%;
+    --primary-foreground: 30 20% 96%;
+
+    --secondary: 30 15% 91%;
+    --secondary-foreground: 0 10% 25%;
+
+    --muted: 30 10% 90%;
+    --muted-foreground: 0 5% 45%;
+
+    --accent: 0 0% 12%;
+    --accent-foreground: 30 20% 96%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 10% 85%;
+    --input: 30 10% 85%;
+    --ring: 0 0% 8%;
+
+    --radius: 0.5rem;
+
+    --success: 145 55% 40%;
+    --warning: 38 92% 50%;
+    --info: 199 89% 48%;
+
+    --header-accent-1: 0 0% 8%;
+    --header-accent-2: 0 0% 15%;
+    --header-accent-3: 0 0% 4%;
+
+    --sidebar-background: 30 15% 99%;
+    --sidebar-foreground: 0 10% 25%;
+    --sidebar-primary: 0 0% 8%;
+    --sidebar-primary-foreground: 30 20% 96%;
+    --sidebar-accent: 30 15% 94%;
+    --sidebar-accent-foreground: 0 10% 25%;
+    --sidebar-border: 30 10% 88%;
+    --sidebar-ring: 345 60% 30%;
+
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+    --font-accent: 'Sora', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 transition-colors;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-accent-foreground hover:bg-accent/90 transition-colors;
+  }
+
+  .btn-outline-primary {
+    @apply border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors;
+  }
+
+  .card-product {
+    @apply bg-card transition-all duration-300 border border-transparent hover:border-black rounded-md overflow-hidden;
+  }
+
+
+  .price-original {
+    @apply text-muted-foreground line-through text-sm;
+  }
+
+  .price-sale {
+    @apply text-accent font-semibold;
+  }
+
+  .badge-discount {
+    @apply bg-accent text-accent-foreground text-xs font-semibold px-2 py-1 rounded;
+  }
+
+  .nav-link {
+    @apply text-foreground hover:text-primary transition-colors cursor-pointer;
+  }
+
+  .input-search {
+    @apply bg-secondary border-0 rounded-l-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+
+  /* Shine effect for buttons */
+  .btn-shine {
+    @apply relative overflow-hidden;
+  }
+
+  .btn-shine::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    transition: left 0.5s ease;
+  }
+
+  .btn-shine:hover::before {
+    left: 100%;
+  }
+
+  /* Continuous glass shine sweep overlay */
+  .glass-shine {
+    @apply relative overflow-hidden;
+  }
+  .glass-shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 75%;
+    height: 100%;
+    background: linear-gradient(
+      115deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.05) 40%,
+      rgba(255, 255, 255, 0.35) 50%,
+      rgba(255, 255, 255, 0.05) 60%,
+      transparent 100%
+    );
+    transform: skewX(-20deg);
+    pointer-events: none;
+  }
+  .glass-shine:hover::after {
+    animation: glass-shine-sweep 1.2s ease-in-out;
+  }
+  @keyframes glass-shine-sweep {
+    0% { left: -150%; }
+    60%, 100% { left: 150%; }
+  }
+
+  /* Glow effect */
+  .glow-effect {
+    @apply transition-all duration-300;
+  }
+
+  .glow-effect:hover {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.15);
+  }
+
+  /* Pulse animation for icons */
+  .icon-pulse {
+    @apply transition-transform duration-200;
+  }
+
+  .icon-pulse:hover {
+    animation: iconPulse 0.3s ease-in-out;
+  }
+
+  @keyframes iconPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+  }
+
+  /* Underline animation */
+  .underline-animate {
+    @apply relative;
+  }
+
+  .underline-animate::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: hsl(var(--primary));
+    transition: width 0.3s ease;
+  }
+
+  .underline-animate:hover::after {
+    width: 100%;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .font-accent {
+    font-family: var(--font-accent);
+    letter-spacing: -0.01em;
+  }
+}
+
+/* ─── Mobile bottom navigation safe-area system ──────────────────────── */
+@media (max-width: 767px) {
+  /* Footer auto bottom padding so content not hidden under nav */
+  body[data-nav-active="1"][data-sa-footer="1"] footer {
+    padding-bottom: calc(var(--mobile-nav-safe-h, 0px) + 0.25rem);
+  }
+  /* WhatsApp / floating action buttons lift above nav */
+  body[data-nav-active="1"][data-sa-whatsapp="1"] .fab-whatsapp {
+    bottom: calc(var(--mobile-nav-safe-h, 0px) + 20px) !important;
+  }
+  body[data-nav-active="1"][data-sa-floating="1"] .fab-safe {
+    bottom: calc(var(--mobile-nav-safe-h, 0px) + 20px) !important;
+  }
+}
+
+/* ============ Arrow Dots Order Button ============ */
+.b05-button {
+  --b05-bg: hsl(var(--primary));
+  --b05-fg: hsl(var(--primary-foreground));
+  --b05-dot: hsl(var(--primary-foreground));
+  --b05-icon-w: 22px;
+  --b05-dot-size: 4px;
+  --b05-dot-gap: 3px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 4px;
+  padding: 0 20px;
+  height: 44px;
+  color: var(--b05-fg);
+  cursor: pointer;
+  isolation: isolate;
+  border: 0;
+  font-family: inherit;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.b05-button:hover:not([data-disabled="true"]) {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px -8px hsl(var(--primary) / 0.55);
+}
+.b05-button:active:not([data-disabled="true"]) { transform: scale(.97); }
+.b05-button[data-disabled="true"] { opacity: .5; cursor: not-allowed; }
+
+.b05-bg {
+  position: absolute; inset: 0;
+  background: var(--b05-bg);
+  border-radius: inherit;
+  z-index: 0;
+  transition: background .4s ease;
+}
+.b05-button:hover .b05-bg {
+  background: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+}
+.b05-inner {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  line-height: 1;
+}
+.b05-text { display: inline-block; }
+.b05-icon-wrap {
+  position: relative;
+  display: inline-block;
+  width: var(--b05-icon-w);
+  height: 14px;
+  overflow: hidden;
+}
+.b05-icon {
+  position: absolute;
+  inset: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--b05-dot-gap);
+  /* Start off-screen to the left, slide right on hover */
+  transform: translateX(calc((var(--index-parent) - 4) * var(--b05-icon-w)));
+  transition: transform .6s cubic-bezier(.5,.1,.2,1);
+  transition-delay: calc((3 - var(--index-parent)) * 60ms);
+}
+.b05-button:hover .b05-icon {
+  transform: translateX(calc(var(--index-parent) * var(--b05-icon-w)));
+}
+.b05-dot {
+  width: var(--b05-dot-size);
+  height: var(--b05-dot-size);
+  border-radius: 999px;
+  background: var(--b05-dot);
+  /* dotValues [2,1,0,1,2] form a `>` arrow shape */
+  transform: translateY(calc((var(--index) - 1) * 3px));
+}
+
+/* Compact variant for tight card layouts */
+.b05-button.b05-sm {
+  --b05-icon-w: 16px;
+  --b05-dot-size: 3px;
+  --b05-dot-gap: 2px;
+  height: 100%;
+  min-height: 32px;
+  width: 100%;
+  padding: 0 8px;
+  border-radius: 4px;
+}
+.b05-button.b05-sm .b05-inner { font-size: 11px; gap: 6px; white-space: nowrap; }
+.b05-button.b05-sm .b05-text { white-space: nowrap; }
+.b05-button.b05-sm .b05-icon-wrap { height: 10px; }
+
+
+.b05-bag { width: 16px; height: 16px; }
+.b05-button.b05-sm .b05-bag { width: 13px; height: 13px; }
+
+/* On compact cards keep only the bag + text, hide the sliding dots to save space */
+.b05-button.b05-sm .b05-icon-wrap { display: none; }

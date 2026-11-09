@@ -1,0 +1,45 @@
+{
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/img/:path*",
+      "destination": "https://hhzcoijhvvlmtazlmiei.supabase.co/storage/v1/render/image/public/:path*"
+    },
+    {
+      "source": "/cdn/:path*",
+      "destination": "https://hhzcoijhvvlmtazlmiei.supabase.co/storage/v1/object/public/:path*"
+    },
+    { "source": "/((?!assets/|cdn/|img/|.*\\..*).*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Alt-Svc", "value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400" }
+      ]
+    },
+    {
+      "source": "/cdn/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/img/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/.well-known/assetlinks.json",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json" },
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
+      ]
+    }
+
+  ]
+}

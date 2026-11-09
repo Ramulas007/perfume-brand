@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /auth
+Disallow: /profile
+Disallow: /checkout
+
+Sitemap: https://www.staticvibes.site/sitemap.xml

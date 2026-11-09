@@ -1,0 +1,1 @@
+INSERT INTO site_settings (key, value) VALUES ('footer_content', '{"tagline": "Premium fashion and lifestyle since 2024.", "phone": "0190990757", "email": "support@staticvibes.site", "address": "Dhaka, BD", "copyright": "Static Vibes"}'::jsonb) ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value;

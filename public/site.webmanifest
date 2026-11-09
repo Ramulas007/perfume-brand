@@ -1,0 +1,25 @@
+{
+  "name": "Helpful Perfumes",
+  "short_name": "Helpful Perfumes",
+  "description": "Premium perfumes, fragrances, attars, and decants in Bangladesh.",
+  "icons": [
+    { "src": "/helpful-perfumes/helpful-perfumes-logo.jpg", "sizes": "192x192", "type": "image/jpeg" },
+    { "src": "/helpful-perfumes/helpful-perfumes-logo.jpg", "sizes": "512x512", "type": "image/jpeg", "purpose": "any maskable" }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "/",
+  "scope": "/",
+  "id": "com.helpfulperfumes.store",
+  "categories": ["shopping", "beauty"],
+  "screenshots": [
+    {
+      "src": "/helpful-perfumes/hero-section.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "form_factor": "wide"
+    }
+  ]
+}

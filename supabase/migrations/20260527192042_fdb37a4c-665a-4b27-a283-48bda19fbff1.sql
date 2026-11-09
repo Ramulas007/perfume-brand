@@ -1,0 +1,1 @@
+INSERT INTO site_settings (key, value) VALUES ('header_content', '{"phone": "0190990757", "tagline": "Free standard delivery on all orders."}'::jsonb) ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value;

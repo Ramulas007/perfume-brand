@@ -1,0 +1,1 @@
+UPDATE public.site_settings SET value = jsonb_set(value, '{primary_button_link}', '"/customize"') WHERE key = 'design_your_thought';

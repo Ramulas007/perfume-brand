@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "site.staticvibes.www.twa",
+    "sha256_cert_fingerprints": ["AD:E6:D3:99:E6:79:F2:D4:9F:79:76:AC:75:A7:CB:D9:5A:45:39:C6:64:A7:B7:F3:84:A7:6E:61:A1:DC:33:C8"]
+  }
+}]

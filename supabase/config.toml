@@ -1,0 +1,25 @@
+project_id = "hhzcoijhvvlmtazlmiei"
+
+[functions.send-welcome-email]
+verify_jwt = false
+
+[functions.send-order-email]
+verify_jwt = false
+
+[functions.send-order-status-email]
+verify_jwt = false
+
+[functions.send-password-reset]
+verify_jwt = false
+
+[functions.steadfast-courier]
+verify_jwt = false
+
+[functions.generate-mockup]
+verify_jwt = false
+
+[functions.ai-product-analyze]
+verify_jwt = false
+
+[functions.ai-product-edit]
+verify_jwt = false
